@@ -7,19 +7,36 @@ namespace Identity.Controllers
 {
     public class HomeController : Controller
     {
-        private UserManager<AppUser> userManager;
-        public HomeController(UserManager<AppUser> userMgr)
+        private readonly ILogger<HomeController> _logger;
+
+        public HomeController(ILogger<HomeController> logger)
         {
-            userManager = userMgr;
+            _logger = logger;
         }
 
-        [Authorize]
-        //[Authorize(Roles = "Manager")]
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-            AppUser user = await userManager.GetUserAsync(HttpContext.User);
-            string message = "Hello " + user.UserName;
-            return View((object)message);
+            return View();
+        }
+
+        public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        public IActionResult Login()
+        {
+            return View();
+        }
+        public IActionResult Signup()
+        {
+            return View();
+        }
+        // TODO Move IAction Methods
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }
