@@ -16,15 +16,23 @@ namespace Identity.Controllers
             userManager = userMrg;
         }
 
-        public IActionResult Index() => View(roleManager.Roles);
-
+        //public IActionResult Index() => View(roleManager.Roles);
+        public IActionResult Index()
+        {
+            var roles = roleManager.Roles.ToList();
+            return View(roles);
+        }
         private void Errors(IdentityResult result)
         {
             foreach (IdentityError error in result.Errors)
                 ModelState.AddModelError("", error.Description);
         }
 
-        public IActionResult Create() => View();
+        //public IActionResult Create() => View();
+        public IActionResult Create()
+        {
+            return View();
+        }
 
         [HttpPost]
         public async Task<IActionResult> Create([Required] string name)

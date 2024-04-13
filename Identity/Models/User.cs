@@ -27,7 +27,7 @@ namespace Identity.Models
         public string NominationDate { get; set; }
         [Required]
         public bool IsAccountActive { get; set; }
-        public string DismissalDate { get; set; }
+        public string? DismissalDate { get; set; }
 
     }
 }
