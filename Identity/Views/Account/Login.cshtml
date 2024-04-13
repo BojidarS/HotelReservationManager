@@ -2,25 +2,57 @@
 @{
     ViewData["Title"] = "Login";
 }
-
-<h1 class="bg-info text-white">Login</h1>
-<div class="text-danger" asp-validation-summary="All"></div>
-  
-<form asp-action="Login" method="post">
-    <input type="hidden" asp-for="ReturnUrl" />
+<style>
     
-    <div class="form-group">
-        <label asp-for="Email"></label>
-        <input asp-for="Email" class="form-control" />
-    </div>
-    <div class="form-group">
-        <label asp-for="Password"></label>
-        <input asp-for="Password" class="form-control" />
-    </div>
-    <div class="form-group">
-        Remember me? <input type="checkbox" asp-for="Remember" />
-    </div>
-    <button class="btn btn-primary" type="submit">Log In</button>
-    <a class="btn btn-info" asp-action="GoogleLogin">Log In With Google</a>
-    <a class="btn btn-secondary" asp-action="ForgotPassword">Forgot Password</a>
-</form>
+    body{
+        background-color: midnightblue;
+    }
+    .yay{
+        margin-top: 500px;
+
+    }
+    label{
+        background-color:cornflowerblue;
+        color:white;
+        border-radius: 10px;
+        width:80px;
+        height:40px;
+        text-align:center;
+        font-size:20px;
+        margin:10px;
+    }
+    .form-group{
+        
+        color: white;
+        
+    }
+
+    h1{
+        border-radius: 10px;
+        background-color: cornflowerblue;
+        color: white
+    }
+</style>
+<div class="yay">
+    <h1>Login</h1>
+    <div class="text-danger" asp-validation-summary="All"></div>
+
+    <form asp-action="Login" method="post">
+        <input type="hidden" asp-for="ReturnUrl" />
+
+        <div class="form-group">
+            <label asp-for="Email"></label>
+            <input asp-for="Email" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Password"></label>
+            <input asp-for="Password" class="form-control" />
+        </div>
+        <div class="form-group">
+            Remember me? <input type="checkbox" asp-for="Remember" />
+        </div>
+        <button class="btn btn-primary" type="submit">Log In</button>
+        <a class="btn btn-info" asp-action="GoogleLogin">Log In With Google</a>
+        <a class="btn btn-secondary" asp-action="ForgotPassword">Forgot Password</a>
+    </form>
+</div>

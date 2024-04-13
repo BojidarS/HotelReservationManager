@@ -3,6 +3,7 @@ namespace Identity.Models
 {
     public class Rooms
     {
+        public int Id { get; set; }
         [Required]
         public int Capacity { get; set; }
         [Required]
@@ -10,9 +11,9 @@ namespace Identity.Models
         [Required]
         public bool IsOccupied { get; set; }
         [Required]
-        public int PriceForAdult { get; set; }
+        public double PriceForAdult { get; set; }
         [Required]
-        public int PriceForChild { get; set; }
+        public double PriceForChild { get; set; }
         [Required]
         public int Number { get; set; }
     }
