@@ -11,9 +11,9 @@ namespace Identity.Models
         [Required]
         public List<Client> ClientsUsingRoom { get; set; }
         [Required]
-        public string SettlementDate { get; set; }
+        public DateTime SettlementDate { get; set; }
         [Required]
-        public string LeavingDate { get; set; }
+        public DateTime LeavingDate { get; set; }
         [Required]
         public bool BreakfastIncluded { get; set; }
         [Required]

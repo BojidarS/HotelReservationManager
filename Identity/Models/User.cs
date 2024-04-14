@@ -24,10 +24,10 @@ namespace Identity.Models
         [Required]
         public int PhoneNumber { get; set; }
         [Required]
-        public string NominationDate { get; set; }
+        public DateTime NominationDate { get; set; }
         [Required]
         public bool IsAccountActive { get; set; }
-        public string? DismissalDate { get; set; }
+        public DateTime? DismissalDate { get; set; }
 
     }
 }
